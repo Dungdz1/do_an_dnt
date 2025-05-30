@@ -1,0 +1,63 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset163 Calibri;}{\f1\fnil\fcharset238 Calibri;}{\f2\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang1066 V\u7873? ph\u7847?n \f1\'f0\f0\u7891? \f2\lang1033\'e1n\f0\lang1066  c\u7911?a em:\line domain/repository/auth.dart:\par
+- T\u7841?o 1 abstract class t\f2\lang1033\'ean\f0\lang1066  l\f2\lang1033\'e0\f0\lang1066  AuthRepository, \u7903? trong \f1\'f0\f2\lang1033\'f3\f0\lang1066  c\f2\lang1033\'f3\f0\lang1066  ch\u7913?a 1\f2\lang1033  c\'e1c\f0\lang1066  h\f2\lang1033\'e0m\f0\lang1066  signin, signup, isLoggedIn, getUser v\f2\lang1033\'e0\f0\lang1066  logout c\f2\lang1033\'f3\f0\lang1066  k\u7871?t qu\u7843? tr\u7843? v\u7873? Either, trong \f1\'f0\f2\lang1033\'f3\f0\lang1066  truy\u7873?n v\f2\lang1033\'e0o\f0\lang1066  request json t\u7915? data/models\par
+\par
+data/repository/auth.dart:\par
+Vi\u7871?t 1 class AuthRepositoryImpl k\u7871? th\u7915?a t\u7915? AuthRepository, tri\u7875?n khai ch\f2\lang1033\'fang\par
+\f0\lang1066 truy\u7873?n request t\u7915? data/model, t\u7841?o 1 h\f2\lang1033\'e0nh\f0\lang1066  \f1\'f0\f0\u7897?ng khi request \f1\'f0\f0\u7871?n \f1\'f0\'e3ng\f0  k\f2\lang1033\'ed\f0\lang1066  t\f2\lang1033\'e0i\f0\lang1066  kho\u7843?n\par
+\par
+data/source/auth_api_service.dart\par
+t\u7841?o 1 l\u7899?p tr\u7915?u t\f1\u432?\f0\u7907?ng v\f2\lang1033\'e0\f0\lang1066  tri\u7875?n khai l\u7899?p tr\u7915?u t\f1\u432?\f0\u7907?ng \f1\'f0\f2\lang1033\'f3\f0\lang1066  v\u7899?i c\f2\lang1033\'e1c\f0\lang1066  h\f2\lang1033\'e0m\f0\lang1066  \f1\'f0\u432?\f0\u7907?c g\u7885?i\par
+signup: \f1\'f0\f0\u7863?t ph\f1\u432?\u417?ng\f0  th\u7913?c post c\u7911?a api v\f2\lang1033\'e0o\f0\lang1066  v\f2\lang1033\'e0\f0\lang1066  truy\u7873?n request t\u7915? data/models v\f2\lang1033\'e0o\f0\lang1066  v\f2\lang1033\'e0\f0\lang1066  g\u7885?i sl<Dio_Client>().post, n\u7871?u \f1\'f0\f2\lang1033\'fang\f0\lang1066  th\f2\lang1033\'ec\f0\lang1066  tr\u7843? v\u7873? Right(v\f2\lang1033\'ec\f0\lang1066  \u7903? tr\f2\lang1033\'ean\f0\lang1066  tr\u7843? d\u7919? li\u7879?u l\f2\lang1033\'e0\f0\lang1066  dang Either)\par
+v\f2\lang1033\'e0\f0\lang1066  ng\f1\u432?\f0\u7907?c l\u7841?i, n\u7871?u sai th\f2\lang1033\'ec\f0\lang1066  tr\u7843? v\u7873? Left v\f2\lang1033\'e0\f0\lang1066  1 message response\f2\lang1033\par
+\f0\lang1066\par
+core/network/dio_client:\par
+T\u7841?o c\f2\lang1033\'e1c\f0\lang1066  request t\u7899?i api nh\f1\u432?\f0  get, post, put, delete\par
+Ch\f2\lang1033\'fang\f0\lang1066  ta c\f2\lang1033\'f3\f0\lang1066  th\u7875? th\u7845?y chi ti\u7871?t ph\u7843?n h\u7891?i c\u7911?a api\par
+\par
+core/network/interceptors.dart\par
+(l\f2\lang1033\'e1t\f0\lang1066  check)\par
+lib/service_locator.dart\par
+qu\u7843?n l\f2\lang1033\'fd\f0\lang1066  c\f2\lang1033\'e1c\f0\lang1066  DI(dependency injection), t\u7913?c l\f2\lang1033\'e0\f0\lang1066  \f1\'f0\'e3ng\f0  k\f2\lang1033\'ed\f0\lang1066  d\u7875? c\f2\lang1033\'e1c\f0\lang1066  class, abtract class \f1\'f0\u432?\f0\u7907?c d\f2\lang1033\'f9ng\f0\lang1066  chung trong app m\f2\lang1033\'e0\f0\lang1066  kh\f2\lang1033\'f4ng\f0\lang1066  c\u7847?n t\u7841?o m\u7899?i th\u7911? c\f2\lang1033\'f4ng\par
+\f0\lang1066 trong l\u7899?p n\f2\lang1033\'e0y\f0\lang1066 , vi\u7879?c \f1\'f0\f0\u7847?u ti\f2\lang1033\'ean\f0\lang1066  l\f2\lang1033\'e0\f0\lang1066  t\u7841?o 1 singleton instance c\u7911?a GetIt, g\u7885?i l\f2\lang1033\'e0\f0\lang1066  sl:\line final sl = GetIt.instance;\par
+sau \f1\'f0\f2\lang1033\'f3\f0\lang1066  \f1\'f0\'e3ng\f0  k\f2\lang1033\'ed\f0\lang1066  m\u7897?t singleton instance c\u7911?a DioClient(l\u7899?p n\f2\lang1033\'e0y\f0\lang1066  \f1\'f0\u432?\f0\u7907?c c\u7845?u h\f2\lang1033\'ecnh\f0\lang1066  \f1\'f0\f0\u7875? g\u7885?i api)\par
+sl.registerSingleton<DioClient>(DioClient());\par
+ti\u7871?p theo l\f2\lang1033\'e0\f0\lang1066  \f1\'f0\'e3ng\f0  k\f2\lang1033\'ed\f0\lang1066  c\f2\lang1033\'e1c\f0\lang1066  d\u7883?ch v\u7909? d\f2\lang1033\'f9ng\f0\lang1066  chung nh\f1\u432?\f0  c\u7911?a abstract class v\f2\lang1033\'e0\f0\lang1066  Impl c\u7911?a ch\f2\lang1033\'fang\par
+sl.registerSingleton<AuthApiService>(AuthApiServiceImpl());\par
+sl.registerSingleton<AuthLocalService>(AuthLocalServiceImpl());\par
+\f0\lang1066 Ti\u7871?p theo l\f2\lang1033\'e0\f0\lang1066  \f1\'f0\'e3ng\f0  k\f2\lang1033\'ed\f0\lang1066  c\f2\lang1033\'e1c\f0\lang1066  kho l\f1\u432?u\f0  tr\u7919? (repositories) l\f2\lang1033\'e0\f0\lang1066  c\u7847?u n\u7889?i gi\u7919?a usecase v\f2\lang1033\'e0\f0\lang1066  data sources\par
+sl.registerSingleton<AuthRepository>(AuthRepositoryImpl());\par
+Sau c\f2\lang1033\'f9ng\f0\lang1066  l\f2\lang1033\'e0\f0\lang1066  \f1\'f0\'e3ng\f0  k\f2\lang1033\'ed\f0\lang1066  c\f2\lang1033\'e1c\f0\lang1066  usecase nh\f1\u432?\f0 :\line sl.registerSingleton<SignupUseCase>(SignupUseCase());\par
+sl.registerSingleton<SigninUseCase>(SigninUseCase());\par
+sl.registerSingleton<LogoutUseCase>(LogoutUseCase());\par
+sl.registerSingleton<GetUserUseCase>(GetUserUseCase());\par
+sl.registerSingleton<IsLoggedInUseCase>(IsLoggedInUseCase());\f2\lang1033\par
+\f0\lang1066 core/constants/api_urls.dart:\line N\f1\u417?i\f0  n\f2\lang1033\'e0y\f0\lang1066  ch\u7913?a 1 \f1\'f0\u432?\f0\u7901?ng d\u7851?n c\f1\u417?\f0  b\u7843?n \f1\'f0\f0\u7863?t l\f2\lang1033\'e0\f0\lang1066  \line static const baseURL = '{{\field{\*\fldinst{HYPERLINK http://192.168.1.8:8080/ }}{\fldrslt{http://192.168.1.8:8080/\ul0\cf0}}}}\f0\fs22 ';\line v\f2\lang1033\'e0\f0\lang1066  c\f2\lang1033\'e1c\f0\lang1066  c\u7845?u h\f2\lang1033\'ecnh\f0\lang1066  sau th\f2\lang1033\'ec\f0\lang1066  \f1\'f0\u432?\f0\u7907?c g\u7885?i  t\f1\u432?\u417?ng\f0  \u7913?ng v\u7899?i c\f2\lang1033\'e1c\f0\lang1066  ch\u7913?c n\f1\'e3ng\f0  c\u7911?a ch\f2\lang1033\'fang\par
+\f0\lang1066 core/usecase/usecase.dart\line\u7903? \f1\'f0\f2\lang1033\'e2y\f0\lang1066 , em g\u7885?i param(form) cho \f1\'f0\'e3ng\f0  k\f2\lang1033\'ed\par
+\f0\lang1066 param n\f2\lang1033\'e0y\f0\lang1066  d\f2\lang1033\'f9ng\f0\lang1066  cho nhi\u7873?u m\u7909?c \f1\'f0\f2\lang1033\'edch\f0\lang1066  nh\f1\u432?\f0  trong page c\u7911?a c\f2\lang1033\'e1c\f0\lang1066  m\f2\lang1033\'e0n\f0\lang1066  h\f2\lang1033\'ecnh\f0\lang1066  v\f2\lang1033\'e0\f0\lang1066  trong c\f2\lang1033\'e1c\f0\lang1066  ph\f1\u432?\u417?ng\f0  th\u7913?c\f2\lang1033\par
+\f0\lang1066 data/models/signup_req_params.dart\par
+\u7903? \f1\'f0\f2\lang1033\'e2y\f0\lang1066 , em t\u7841?o json request l\f2\lang1033\'ean\f0\lang1066  api v\u7899?i c\f2\lang1033\'e1c\f0\lang1066  ph\f1\u432?\u417?ng\f0  th\u7913?c \f1\'f0\f0\u7875? g\u7885?i l\u7899?p n\f2\lang1033\'e0y\par
+\par
+\f0\lang1066 domain/usecase/signup.dart\f2\lang9\par
+class SignupUseCase implements UseCase<Either, SignupReqParams> \{\par
+\par
+  @override\par
+  Future<Either> call(\{SignupReqParams ? param\}) async \{\par
+    return sl<AuthRepository>().signup(param!);\par
+  \}\par
+\}\par
+SignupUseCase l\'e0 m\f0\lang1066\u7897?t use case d\f2\lang1033\'f9ng \f1\'f0\f0\lang1066\u7875? x\u7917? l\f2\lang1033\'fd logic \f1\'f0\'e3ng k\f2\'fd ng\f1\u432?\f0\lang1066\u7901?i d\f2\lang1033\'f9ng b\f0\lang1066\u7857?ng c\f2\lang1033\'e1ch g\f0\lang1066\u7885?i signup() t\u7915? AuthRepository, v\u7899?i tham s\u7889? l\f2\lang1033\'e0 SignupReqParams.\par
+\par
+\f0\lang1066 presentation/auth/pages/signup.dart\par
+g\u7885?i param \f1\'f0\f2\lang1033\'e3\f0\lang1066  vi\u7871?t trong m\u7909?c core/usercase \f1\'f0\f0\u7875? th\u7921?c hi\u7879?n c\f2\lang1033\'e1c\f0\lang1066  ph\f1\u432?\u417?ng\f0  th\u7913?c\par
+v\f2\lang1033\'e0\f0\lang1066  tr\f1\u432?\f0\u7899?c khi ch\u7841?y ph\u7843?i g\u7885?i ph\f1\u432?\u417?ng\f0  th\u7913?c void setupServiceLocator() trong main\par
+cu\u7889?i c\f2\lang1033\'f9ng\f0\lang1066  l\f2\lang1033\'e0\f0\lang1066  cubit v\f2\lang1033\'e0\f0\lang1066  state trong common/bloc/button\par
+trong button state em c\f2\lang1033\'f3\f0\lang1066  4 tr\u7841?ng th\f2\lang1033\'e1i\f0\lang1066 , khi ng\f1\u432?\f0\u7901?i d\f2\lang1033\'f9ng\f0\lang1066  ch\f1\u432?a\f0  l\f2\lang1033\'e0m\f0\lang1066  g\f2\lang1033\'ec\f0\lang1066  th\f2\lang1033\'ec\f0\lang1066  ch\u7881? hi\u7875?n th\u7883? th\f2\lang1033\'f4ng\f0\lang1066  th\f1\u432?\f0\u7901?ng\par
+tr\u7841?ng th\f2\lang1033\'e1i\f0\lang1066  khi ng\f1\u432?\f0\u7901?i d\f2\lang1033\'f9ng\f0\lang1066  \f1\'f0\f2\lang1033\'e3\f0\lang1066  \u7845?n n\f2\lang1033\'fat\f0\lang1066  v\f2\lang1033\'e0\f0\lang1066  h\f2\lang1033\'e0nh\f0\lang1066  \f1\'f0\f0\u7897?ng \f1\'f0ang\f0  \f1\'f0\u432?\f0\u7907?c x\u7917? l\f2\lang1033\'fd\par
+\f0\lang1066 tr\u7841?ng th\f2\lang1033\'e1i\f0\lang1066  khi ng\f1\u432?\f0\u7901?i d\f2\lang1033\'f9ng\f0\lang1066  th\f2\lang1033\'e0nh\f0\lang1066  c\f2\lang1033\'f4ng\f0\lang1066  \par
+v\f2\lang1033\'e0\f0\lang1066  tr\u7841?ng th\f2\lang1033\'e1i\f0\lang1066  x\u7843?y ra l\u7895?i \par
+\f2\lang9\par
+}
+ 

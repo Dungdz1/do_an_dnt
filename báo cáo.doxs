@@ -1,0 +1,7 @@
+Về phần đồ án của em:
+repository/auth.dart:
+- Tạo 1 abstract class tên là AuthRepository, ở trong đó có chứa 1 các hàm signin, signup, isLoggedIn, getUser và logout có kết quả trả về Either
+
+data/repository/auth.dart:
+Viết 1 class AuthRepositoryImpl kế thừa từ AuthRepository
+
